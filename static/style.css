@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 20px;
+}
+
+.container {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
+
+h1 {
+    color: #1e3a8a;
+    margin-bottom: 25px;
+}
+
+/* Checkbox Grid Styles */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.service-check {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #cbd5e1;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.service-check.passed {
+    background-color: #dcfce7;
+    border-color: #4ade80;
+    color: #166534;
+}
+.service-check.passed::before {
+    content: '✓';
+}
+
+.service-check.failed {
+    background-color: #fee2e2;
+    border-color: #f87171;
+    color: #991b1b;
+}
+.service-check.failed::before {
+    content: '✗';
+}
+
+
+#game-area {
+    margin-bottom: 30px;
+}
+
+.status-box {
+    background-color: #eef2ff;
+    border: 1px solid #c7d2fe;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.message-box {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.ai-message-box { background-color: #dbeafe; border: 1px solid #93c5fd; }
+.user-message-box { background-color: #e0f2fe; border: 1px solid #7dd3fc; }
+#ai-message, #user-transcription { font-style: italic; font-size: 1.1em; }
+
+
+/* Instruction Display Styles */
+.instruction-container {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f0f9ff;
+    border-left: 5px solid #3b82f6;
+    border-radius: 0 8px 8px 0;
+}
+
+.instruction-container p { margin: 0; padding: 0; }
+.instruction-container p:first-child { font-size: 0.9em; font-weight: bold; color: #555; margin-bottom: 5px; }
+.instruction-text-content { font-family: 'Courier New', Courier, monospace; font-size: 1.3em; font-weight: bold; color: #1e3a8a; }
+
+
+button#start-btn {
+    background-color: #1d4ed8;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button#start-btn:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* Listening animation */
+#status-text.listening {
+    color: #d9480f;
+    font-weight: bold;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; }
+}
+
+/* --- REWRITTEN: Report Summary Styles for Merged Audio --- */
+.report-container {
+    text-align: left;
+    margin-top: 20px;
+    border-top: 2px solid #e5e7eb;
+    padding-top: 20px;
+}
+
+.report-service-block {
+    margin-bottom: 25px;
+}
+
+.report-service-title {
+    color: #1e3a8a;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+/* NEW: Style for the merged audio player */
+.report-service-block audio {
+    width: 100%;
+    margin-top: 10px;
+}

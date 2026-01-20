@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Service Check system</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Walkie-Talkie Service Check System</h1>
+
+        <!-- This container will be populated by script.js -->
+        <div class="services-container" id="services-container"></div>
+        
+        <div id="game-area">
+            <div class="status-box">
+                <p><strong>Status:</strong> <span id="status-text">Initializing...</span></p>
+            </div>
+            <div class="message-box ai-message-box">
+                <p><strong>System Said:</strong></p>
+                <p id="ai-message">Please wait, loading game data.</p>
+                <!-- Container for the instruction to be spoken -->
+                <div id="instruction-display" class="instruction-container" style="display: none;">
+                    <p><strong>Say this phrase:</strong></p>
+                    <p id="instruction-text" class="instruction-text-content"></p>
+                </div>
+            </div>
+            <div class="message-box user-message-box">
+                <p><strong>You Said:</strong></p>
+                <p id="user-transcription">...</p>
+            </div>
+        </div>
+
+        <!-- NEW: This container will hold the final summary report -->
+        <div id="report-container" class="report-container" style="display: none;"></div>
+        
+        <button id="start-btn" disabled>Loading...</button>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
